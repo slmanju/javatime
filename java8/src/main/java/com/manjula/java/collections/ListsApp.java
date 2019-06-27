@@ -23,7 +23,7 @@ public class ListsApp {
         
         // get operation
         start = System.nanoTime();
-        IntStream.range(0, 10000).forEach(i -> arrayList.get(i));
+        IntStream.range(0, 10000).forEach(arrayList::get);
         long arrayListGet = System.nanoTime() - start;
         
         start = System.nanoTime();

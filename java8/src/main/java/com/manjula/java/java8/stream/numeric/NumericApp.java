@@ -16,7 +16,9 @@ public class NumericApp {
         int total = subjects.stream().mapToInt(Subject::getMarks).sum();
         OptionalInt min = subjects.stream().mapToInt(Subject::getMarks).min();
         OptionalInt max = subjects.stream().mapToInt(Subject::getMarks).max();
-        OptionalDouble average = subjects.stream().mapToInt(Subject::getMarks).average();
+        OptionalDouble average = subjects.stream()
+                .mapToInt(Subject::getMarks)
+                .average();
         
         System.out.println("total: " + total);
         System.out.println("min: " + min);

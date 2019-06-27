@@ -1,6 +1,7 @@
 package com.manjula.java.java8.terminal;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -58,14 +59,14 @@ public class TerminalOperations {
     
     private static void min() {
         Optional<Employee> min = employees.stream()
-                  .min((e1, e2) -> e1.getAge() - e2.getAge());
+                  .min(Comparator.comparingInt(Employee::getAge));
         
         System.out.println(min);
     }
 
     private static void max() {
         Optional<Employee> max = employees.stream()
-                  .max((e1, e2) -> e1.getAge() - e2.getAge());
+                  .max(Comparator.comparingInt(Employee::getAge));
         
         System.out.println(max);
     }
